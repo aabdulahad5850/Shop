@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VORTEX.shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3225/3225196.png">
+</head>
+<body class="box1">
+    <div class="box2" id="cursorGlow"></div>
+    <div class="box3" id="scrollLine"></div>
+
+    <div class="box4" id="splashCurtain">
+        <div class="box5" id="selectorView">
+            <div class="box138">
+                <span class="box139">ACTIVE KEYS: <strong id="keyCounterText">0 / 3</strong></span>
+                <span class="box140">PASSCODE: <strong>VX-77</strong></span>
+            </div>
+            <span class="box6">VORTEX</span>
+            <p class="box7">PICK ONE OR ALL THREE NODES, ENTER PASSCODE VX-77, AND PRESS ENTER</p>
+            <div class="box121">
+                <button type="button" class="box122" data-node="1">
+                    <i class="fa-solid fa-shoe-prints"></i>
+                    <span>NODE 01</span>
+                    <small class="box141">FOOTWEAR</small>
+                </button>
+                <button type="button" class="box122" data-node="2">
+                    <i class="fa-solid fa-headphones"></i>
+                    <span>NODE 02</span>
+                    <small class="box141">AUDIO RIG</small>
+                </button>
+                <button type="button" class="box122" data-node="3">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <span>NODE 03</span>
+                    <small class="box141">CARRY & DROP</small>
+                </button>
+            </div>
+            <div class="box142">
+                <input type="text" id="nodePassInput" class="box143" placeholder="Type VX-77 or tap nodes">
+                <button type="button" id="fillPassBtn" class="box144">Auto Key</button>
+            </div>
+            <div class="box123">
+                <button type="button" class="box8" id="enterStoreBtn">Enter</button>
+                <button type="button" class="box124" id="skipUnlockBtn">Quick Skip</button>
+            </div>
+        </div>
+
+        <div class="box129" id="infoBriefModal">
+            <div class="box130">
+                <span class="box131" id="briefBadge">SELECTED BRIEF</span>
+                <h2 class="box132" id="briefTitle">Node Overview</h2>
+                <p class="box133" id="briefDesc"></p>
+                <div class="box134" id="briefCards"></div>
+                <div class="box135">
+                    <button type="button" class="box136" id="backToNodesBtn">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span>Back</span>
+                    </button>
+                    <button type="button" class="box137" id="goToSiteBtn">Open Storefront</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header class="box9">
+        <div class="box10">
+            <a href="#top" class="box11">
+                <i class="fa-solid fa-compass-drafting"></i>
+                <span>VORTEX</span>
+            </a>
+            <nav class="box12">
+                <a href="#spotlight" class="box13">Spotlight</a>
+                <a href="#lookbook" class="box13">Lookbook</a>
+                <a href="#shop" class="box13">Products</a>
+                <a href="#flash" class="box13">Flash Drop</a>
+                <a href="#craft" class="box13">Materials</a>
+                <a href="#faq" class="box13">FAQ</a>
+            </nav>
+            <div class="box14">
+                <button class="box15" id="modeSwitch" aria-label="Theme">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+                <button class="box16" id="openSaved" aria-label="Saved">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="box17" id="savedCount">0</span>
+                </button>
+                <button class="box18" id="openBag" aria-label="Bag">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="box19" id="bagCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="box20" id="top">
+        <div class="box21">
+            <div class="box22 reveal-left">
+                <div class="box23">
+                    <span class="box24">AUTUMN / WINTER</span>
+                    <span class="box25">AQUA & RED DROP</span>
+                </div>
+                <h1 class="box26">Sculpted Objects & Daily Gear</h1>
+                <p class="box27">Deep green surfaces balanced with aqua accents and crimson highlights. Switch the live preview card or explore all 16 items below.</p>
+                <div class="box28">
+                    <a href="#shop" class="box29">Browse Products</a>
+                    <button class="box30" id="replayIntroBtn">Replay Intro</button>
+                </div>
+                <div class="box31">
+                    <div class="box32">
+                        <strong class="counter" data-target="19400">0</strong>
+                        <span>Orders Shipped</span>
+                    </div>
+                    <div class="box32">
+                        <strong class="counter" data-target="84">0</strong>
+                        <span>Exclusive Drops</span>
+                    </div>
+                    <div class="box32">
+                        <strong class="counter" data-target="49">0</strong>
+                        <span>Avg Rating x10</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box33 reveal-right">
+                <div class="box34" id="tiltStage">
+                    <div class="box35">
+                        <span id="stageTag">FEATURED 01</span>
+                        <button class="box36" id="cycleStageBtn" aria-label="Next Item">
+                            <i class="fa-solid fa-rotate"></i>
+                        </button>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80" alt="" class="box37" id="stageImg">
+                    <div class="box38">
+                        <div>
+                            <h2 id="stageName">Solar Flare Runner</h2>
+                            <span id="stagePrice">$195.00</span>
+                        </div>
+                        <button class="box39" id="stageCartBtn">Add To Bag</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box96">
+        <div class="box97">
+            <div class="box98 reveal-left">
+                <div class="box99"><i class="fa-solid fa-bolt"></i></div>
+                <h3>24h Express Dispatch</h3>
+                <p>Same-day warehouse fulfillment across all major cities with live tracking.</p>
+            </div>
+            <div class="box98 reveal-right">
+                <div class="box99"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>2-Year Hardware Shield</h3>
+                <p>Full replacement coverage on electronics, zippers, and structural seams.</p>
+            </div>
+            <div class="box98 reveal-left">
+                <div class="box99"><i class="fa-solid fa-arrows-rotate"></i></div>
+                <h3>30-Day Easy Returns</h3>
+                <p>Instant size or color exchange with zero restocking fees on unworn gear.</p>
+            </div>
+            <div class="box98 reveal-right">
+                <div class="box99"><i class="fa-solid fa-lock"></i></div>
+                <h3>Encrypted Checkout</h3>
+                <p>Multi-layer payment protection supporting cards, wallets, and installments.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="box40" id="spotlight">
+        <div class="box41">
+            <div class="box42 reveal-left">
+                <span class="box43">INTERACTIVE PICKER</span>
+                <h2 class="box44">Three Signature Angles</h2>
+            </div>
+            <div class="box45">
+                <button class="box46 active" data-slot="0">01 Footwear</button>
+                <button class="box46" data-slot="1">02 Sound</button>
+                <button class="box46" data-slot="2">03 Carry</button>
+            </div>
+        </div>
+        <div class="box47" id="spotlightCard"></div>
+    </section>
+
+    <section class="box100" id="lookbook">
+        <div class="box101 reveal-left">
+            <span class="box43">VISUAL SERIES</span>
+            <h2 class="box44">Curated Street & Desk Kits</h2>
+        </div>
+        <div class="box102">
+            <div class="box103 reveal-left">
+                <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=900&q=80" alt="" class="box104">
+                <div class="box105">
+                    <span class="box106">KIT 01</span>
+                    <h3>Urban Motion Footwear</h3>
+                    <p>Lightweight knit and cushioned soles engineered for daily comfort.</p>
+                    <a href="#shop" class="box107">Explore Shoes <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="box103 reveal-right">
+                <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=900&q=80" alt="" class="box104">
+                <div class="box105">
+                    <span class="box106">KIT 02</span>
+                    <h3>Acoustic Isolation Rig</h3>
+                    <p>Balanced drivers and soft ear pads built for long studio sessions.</p>
+                    <a href="#shop" class="box107">Explore Audio <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="box103 reveal-left">
+                <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=900&q=80" alt="" class="box104">
+                <div class="box105">
+                    <span class="box106">KIT 03</span>
+                    <h3>Modular Everyday Carry</h3>
+                    <p>Weatherproof packs and classic timepieces for daily transit.</p>
+                    <a href="#shop" class="box107">Explore Packs <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box48" id="shop">
+        <div class="box49">
+            <div class="box50 reveal-left">
+                <span class="box43">FULL COLLECTION</span>
+                <h2 class="box44">Products & Prices (16 Items)</h2>
+            </div>
+            <div class="box51 reveal-right">
+                <button class="box52 active" data-filter="all">All</button>
+                <button class="box52" data-filter="shoes">Shoes</button>
+                <button class="box52" data-filter="audio">Audio</button>
+                <button class="box52" data-filter="packs">Packs</button>
+            </div>
+        </div>
+        <div class="box53" id="itemsGrid"></div>
+    </section>
+
+    <section class="box108" id="flash">
+        <div class="box109">
+            <div class="box110 reveal-left">
+                <span class="box57">FLASH DROP</span>
+                <h2 class="box58">Midnight Carbon Chronograph</h2>
+                <p class="box59">Limited batch of 50 numbered pieces. Brushed dark metal bezel, clear dial, and quick-swap strap.</p>
+                <div class="box111">
+                    <div class="box112">
+                        <strong id="cdHours">08</strong>
+                        <span>HOURS</span>
+                    </div>
+                    <div class="box112">
+                        <strong id="cdMins">42</strong>
+                        <span>MINS</span>
+                    </div>
+                    <div class="box112">
+                        <strong id="cdSecs">19</strong>
+                        <span>SECS</span>
+                    </div>
+                </div>
+                <div class="box60">
+                    <div class="box61">
+                        <span class="box62">$179.00</span>
+                        <span class="box63">$230.00</span>
+                    </div>
+                    <button class="box64" id="flashAddBtn">Claim Drop</button>
+                </div>
+            </div>
+            <div class="box113 reveal-right">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=80" alt="" class="box114">
+            </div>
+        </div>
+    </section>
+
+    <section class="box54" id="offers">
+        <div class="box55">
+            <div class="box56 reveal-left">
+                <span class="box57">DUO EDITION</span>
+                <h2 class="box58">Street & Studio Duo Pack</h2>
+                <p class="box59">Pair our high-response runners with wireless studio headphones at a reduced bundle price.</p>
+                <div class="box60">
+                    <div class="box61">
+                        <span class="box62">$369.00</span>
+                        <span class="box63">$445.00</span>
+                    </div>
+                    <button class="box64" id="duoAddBtn">Grab Duo Pack</button>
+                </div>
+            </div>
+            <div class="box65 reveal-right">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80" alt="" class="box66">
+            </div>
+        </div>
+    </section>
+
+    <section class="box145" id="craft">
+        <div class="box146 reveal-left">
+            <span class="box43">BUILD STANDARDS</span>
+            <h2 class="box44">Materials & Craftsmanship</h2>
+        </div>
+        <div class="box147">
+            <div class="box148 reveal-left">
+                <span class="box149">01 / TEXTILE</span>
+                <h3>High-Density Ripstop & Knit</h3>
+                <p>Abrasion-tested yarns and water-repellent coatings built for changing street weather.</p>
+            </div>
+            <div class="box148 reveal-right">
+                <span class="box149">02 / ACOUSTICS</span>
+                <h3>Tuned Dynamic Chambers</h3>
+                <p>Balanced low-end depth and vocal clarity with soft memory-foam ear cushions.</p>
+            </div>
+            <div class="box148 reveal-left">
+                <span class="box149">03 / HARDWARE</span>
+                <h3>Anodized Alloy & Buckles</h3>
+                <p>Corrosion-resistant clasps, reinforced stitching, and precision-milled trims.</p>
+            </div>
+            <div class="box148 reveal-right">
+                <span class="box149">04 / FIT</span>
+                <h3>All-Day Ergonomic Balance</h3>
+                <p>Weight-distributed packs and contoured midsoles to reduce fatigue on long days.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="box67" id="feedback">
+        <div class="box68 reveal-left">
+            <span class="box43">CLIENT NOTES</span>
+            <h2 class="box44">Recent Buyers</h2>
+        </div>
+        <div class="box69">
+            <div class="box70 reveal-left">
+                <div class="box71">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="box72">Deep green backdrop with aqua and red accents feels vibrant yet structured.</p>
+                <div class="box73">
+                    <strong>Temur Azizov</strong>
+                    <span>Tashkent</span>
+                </div>
+            </div>
+            <div class="box70 reveal-right">
+                <div class="box71">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="box72">Opening node cards and applying the promo code in the bag works smoothly.</p>
+                <div class="box73">
+                    <strong>Kamola Saidova</strong>
+                    <span>Samarkand</span>
+                </div>
+            </div>
+            <div class="box70 reveal-left">
+                <div class="box71">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="box72">Clean card contrast and fast category filtering across all 16 items.</p>
+                <div class="box73">
+                    <strong>Javohir Karimov</strong>
+                    <span>Namangan</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box115" id="faq">
+        <div class="box116 reveal-left">
+            <span class="box43">SUPPORT DESK</span>
+            <h2 class="box44">Frequently Asked Questions</h2>
+        </div>
+        <div class="box117">
+            <div class="box118 reveal-left">
+                <button class="box119">
+                    <span>How long does express courier delivery take?</span>
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <div class="box120">
+                    <p>Orders placed before 18:00 are dispatched the same day and arrive within 24 hours in major cities or 2 to 3 business days nationwide.</p>
+                </div>
+            </div>
+            <div class="box118 reveal-right">
+                <button class="box119">
+                    <span>Can I exchange footwear sizes after delivery?</span>
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <div class="box120">
+                    <p>Yes. Every footwear order includes a 30-day free size exchange label inside the box so you can swap sizes effortlessly.</p>
+                </div>
+            </div>
+            <div class="box118 reveal-left">
+                <button class="box119">
+                    <span>Are audio devices covered by an official warranty?</span>
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <div class="box120">
+                    <p>All headphones, earbuds, and mechanical keyboards carry a 24-month hardware replacement warranty registered automatically to your order.</p>
+                </div>
+            </div>
+            <div class="box118 reveal-right">
+                <button class="box119">
+                    <span>How do bundle discounts apply in the shopping bag?</span>
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <div class="box120">
+                    <p>Duo Packs and Flash Drops already reflect discounted bundle pricing and qualify for complimentary courier shipping automatically.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="box74">
+        <div class="box150">
+            <div class="box151">
+                <i class="fa-solid fa-truck-fast"></i>
+                <div>
+                    <strong>Promo Code: VORTEX15</strong>
+                    <span>15% off eligible items + free express courier</span>
+                </div>
+            </div>
+            <div class="box151">
+                <i class="fa-solid fa-headset"></i>
+                <div>
+                    <strong>Daily Support: 09:00 - 22:00</strong>
+                    <span>Direct help for sizing, orders, and exchanges</span>
+                </div>
+            </div>
+            <div class="box151">
+                <i class="fa-solid fa-award"></i>
+                <div>
+                    <strong>24-Month Protection</strong>
+                    <span>Official coverage on studio audio and hardware</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="box75">
+            <div class="box76">
+                <a href="#top" class="box11">
+                    <i class="fa-solid fa-compass-drafting"></i>
+                    <span>VORTEX</span>
+                </a>
+                <p class="box77">Independent storefront uniting deep green tones, aqua accents, crimson energy, and fast checkout.</p>
+                <div class="box152">
+                    <a href="#top" class="box153" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#top" class="box153" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#top" class="box153" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#top" class="box153" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="box78">
+                <h4>Sections</h4>
+                <a href="#spotlight">Spotlight</a>
+                <a href="#lookbook">Lookbook</a>
+                <a href="#shop">Products</a>
+                <a href="#flash">Flash Drop</a>
+                <a href="#craft">Materials</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <div class="box78">
+                <h4>Collections</h4>
+                <a href="#shop">Runners & Sneakers</a>
+                <a href="#shop">Wireless Audio</a>
+                <a href="#shop">Packs & Timepieces</a>
+                <a href="#offers">Street & Studio Duo</a>
+            </div>
+            <div class="box79">
+                <h4>VIP List</h4>
+                <p class="box154">Get early links for numbered drops and seasonal promo codes.</p>
+                <form class="box80" id="vipForm">
+                    <input type="email" placeholder="Enter email" required class="box81">
+                    <button type="submit" class="box82">Join VIP</button>
+                </form>
+            </div>
+        </div>
+        <div class="box83">
+            <span>2026 Akhathanov.</span>
+            
+        </div>
+    </footer>
+
+    <div class="box84" id="overlayBg"></div>
+
+    <aside class="box85" id="bagDrawer">
+        <div class="box86">
+            <h3>Shopping Bag</h3>
+            <button class="box87" id="closeBag"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="box88" id="bagItems"></div>
+        <div class="box89">
+            <div class="box125">
+                <input type="text" id="promoInput" placeholder="Promo code (VORTEX15)" class="box126">
+                <button type="button" id="applyPromoBtn" class="box127">Apply</button>
+            </div>
+            <div class="box90">
+                <span>Subtotal</span>
+                <strong id="bagSub">$0.00</strong>
+            </div>
+            <div class="box90">
+                <span>Discount (15%)</span>
+                <strong id="bagDiscount" class="box128">-$0.00</strong>
+            </div>
+            <div class="box90">
+                <span>Courier</span>
+                <span class="box91">Free</span>
+            </div>
+            <div class="box92">
+                <span>Total</span>
+                <strong id="bagTotal">$0.00</strong>
+            </div>
+            <button class="box93" id="payBtn">Place Order</button>
+        </div>
+    </aside>
+
+    <aside class="box85" id="savedDrawer">
+        <div class="box86">
+            <h3>Saved Wishlist</h3>
+            <button class="box87" id="closeSaved"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="box88" id="savedItems"></div>
+    </aside>
+
+    <div class="box94" id="noticeBar">
+        <span class="box95"></span>
+        <span id="noticeText">Updated</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
